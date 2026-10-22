@@ -48,7 +48,7 @@ Install the attached pm skills release. Check my environment, verify the package
 For a published repository release, use:
 
 ```text
-Install pm skills 3.0.1 from https://github.com/chemny/cmm-pm-skills. Verify that the requested version is available; do not substitute an older version. Check the environment, install only this Skill, and verify discovery and loading.
+Install pm skills 3.0.1 from https://github.com/chemny/pm-skills. Verify that the requested version is available; do not substitute an older version. Check the environment, install only this Skill, and verify discovery and loading.
 ```
 
 The Agent should report the installed version and actual loading result. If the requested version is not available remotely, use the attached ZIP or report the blocker. See the [installation guide](docs/install.md).
@@ -134,4 +134,4 @@ Read the [user guide](docs/usage.md), [installation and recovery guide](docs/ins
 
 ## About Me
 
-Maintained by CMM. The project repository is [chemny/cmm-pm-skills](https://github.com/chemny/cmm-pm-skills).
+Maintained by CMM. The project repository is [chemny/pm-skills](https://github.com/chemny/pm-skills).

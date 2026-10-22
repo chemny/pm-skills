@@ -8,7 +8,7 @@
   "minimum_python": "3.13",
   "channel": "stable",
   "publication": "not-performed",
-  "repository": "https://github.com/chemny/cmm-pm-skills",
+  "repository": "https://github.com/chemny/pm-skills",
   "source_entry_sha256": "ca3334347d10579b69a1269d058132545f8dae91e75836f4037739e2fed5522b",
   "rule_body_transform": "Source binding, structured readable product review, single canonical ledger and blocked-repair execution order",
   "code_transform": "Atomic canonical-state saves; fresh persisted control recheck after postflight. Original failures retained externally.",

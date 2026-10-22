@@ -48,7 +48,7 @@ pm skills 是一个帮助普通用户开发软件和 Skill 的 Agent 技能。�
 仓库已提供本版后，也可发送：
 
 ```text
-帮我从 https://github.com/chemny/cmm-pm-skills 安装 pm skills 3.0.1。先核实这个版本已经可取得，不要用旧版替代；检查环境，只安装这个 Skill，再验证识别和加载。
+帮我从 https://github.com/chemny/pm-skills 安装 pm skills 3.0.1。先核实这个版本已经可取得，不要用旧版替代；检查环境，只安装这个 Skill，再验证识别和加载。
 ```
 
 Agent 应报告实际安装版本与加载结果。远程尚无指定版本时，使用附件 ZIP 或如实报告阻塞。详细方法见[安装说明](docs/install.md)。
@@ -134,4 +134,4 @@ LICENSE
 
 ## 关于我
 
-由 CMM 维护。项目仓库：[chemny/cmm-pm-skills](https://github.com/chemny/cmm-pm-skills)。
+由 CMM 维护。项目仓库：[chemny/pm-skills](https://github.com/chemny/pm-skills)。
