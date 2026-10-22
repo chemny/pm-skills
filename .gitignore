@@ -1,11 +1,8 @@
-# Private maintainer-only files — never commit
-_Internal/
-CLAUDE.local.md
+__pycache__/
 node_modules/
+*.pyc
 .DS_Store
+.pm-skills-install.json
 publish-check-report.json
-
-# Generated build artifacts from regression prototypes
-**/.build/
-_runs/**/prototype/dist/
-_runs/**/*.app/
+smoke-test-report.json
+se-quality-report.json

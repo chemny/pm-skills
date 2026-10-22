@@ -1,0 +1,4 @@
+interface:
+  display_name: "pm skills"
+  short_description: "从目标、设计、实现到验证交付，支持单项与接续"
+  default_prompt: "根据我当前任务区分讨论、规划和执行，按有效输入与授权推进软件或Skill开发。"

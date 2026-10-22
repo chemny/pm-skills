@@ -1,117 +1,137 @@
-# cmm-pm-skills
+# pm skills
 
-中文 | [English](./README.md)
+[English](README.md) | 中文
 
-cmm-pm-skills 是一个面向产品经理、创始人、独立开发者和 Agent 用户的产品经理工作流 skills 套件。它把"从市场到落地"的每个阶段做成可调用的命令，把零散的想法和调研整理成真实可用的交付物（市场分析、PRD、原型、技术方案……），方便后续设计、研发、测试与上线继续使用。
+## 项目简介
 
-它支持市场分析、需求洞察、产品战略、PRD 与界面/技术设计，也可以一路贯通到用户故事、测试、上线与数据迭代——所有阶段共享一套统一工作纪律。
+pm skills 是一个帮助普通用户开发软件和 Skill 的 Agent 技能。你告诉 Codex 想做什么，它会把想法整理成可审阅的方案，再按授权推进实现、测试和交付，并保存后续接手需要的项目资料。
 
-## 适合谁使用？
+它也支持已有项目的功能变更、Bug 修复，以及单独的研究或设计任务。讨论想法本身不会授权开始开发。
 
-这个套件适合：
+## 效果预览
 
-- 用 Claude Code / Codex 做产品的**产品经理、创始人、独立开发者**；
-- 想要"从想法到 PRD 到原型"一条龙、且**每步有据可依、不被 AI 糊弄**的人；
-- 需要把零散调研沉淀成可交付、可追溯产物的个人或小团队。
+![通过 pm skills 交付的软件案例：粘贴会议文字、点击生成并展示结果](assets/zhishuo-example.png)
 
-## 它能做什么？
+使用合成会议文字的软件交付案例；生成内容仍需核对。
 
-通用 AI 给你一堆漂亮文字，但往往浅、爱编、容易跑偏。这套 skills 把产品经理各阶段做成命令，每步都遵循同一套纪律：继承上游不重造、自己搜证三角验证、不编造、结论交你拍板。
-
-最终你得到的不是空话，而是能直接用的交付物——一份有数据支撑的市场分析、一份可开发的 PRD、一套可点击的原型、一份落地的技术方案。
-
-## 核心能力
-
-**总入口 `/cmm-pm-skills`** 让你一句话上手：从头做整套，或只做某一块（如只写 PRD）。它统筹项目状态台账（跨会话不丢）、按阶段守门（风险结论→你拍板）、领航下一步。下面是它统筹的各阶段——按产品研发实际顺序排列，前面是决定"做不做、怎么做"的关键阶段，后面是落地与迭代。
+## 核心功能
 
 | 能力 | 它能帮你做什么 |
 |---|---|
-| 市场分析（`/market-analysis`） | 用证据梳理市场、用户、买单人、竞品与颠覆机会。 |
-| 需求洞察（`/insight`） | 区分真实需求与假设，并形成一手验证计划。 |
-| 产品战略（`/strategy`） | 明确定位、壁垒、商业模式、定价和关键取舍。 |
-| PRD（`/write-prd`） | 产出覆盖功能、流程、交互、数据和边界的可开发需求。 |
-| 界面设计（`/wireframe`） | 生成流程、状态、可点击 HTML 原型和实现规格。 |
-| 用户故事（`/write-stories`） | 把需求拆成可追溯的用户故事和验收标准。 |
-| 技术方案（`/tech-design`） | 梳理选型、架构、数据、技术验证与实现冲突。 |
-| 测试（`/test-scenarios`） | 覆盖正常路径、边界条件和异常情况。 |
-| 上线（`/plan-launch`） | 制定聚焦的市场进入与发布计划。 |
-| 数据迭代（`/analyze-cohorts`） | 把产品指标带回下一轮需求发现。 |
-
-> 完整说明见 [PIPELINE.md](./PIPELINE.md)；统一纪律见 [CONVENTIONS.md](./CONVENTIONS.md)。⑦技术方案实现/⑨研发属工程，不在本套件。
-
-## 平台兼容性
-
-兼容 Claude Code、Codex 和 OpenClaw。Claude Code 提供命令与 Skills；Codex 下拉菜单显示包括 `CMM PM Skills: Main` 在内的 13 个一级 Skills；OpenClaw 可将 `main` 识别为模型可见、可作为命令调用的 Skill。其余 58 个专业方法由内部路由按需调用。
+| 从想法启动软件或 Skill | 先整理需求、用户流程和原型或调用样例，再进入实现。 |
+| 实现并验证 | 把认可的方案落实到工程任务、真实执行、测试和可使用的交付物。 |
+| 修改或修复已有项目 | 复用当前需求与测试，只更新受影响部分，保留其他工作。 |
+| 暂停和接续 | 保存决定、证据和下一步，让新会话能够接手。 |
+| 单独完成一项交付 | 只做研究、设计或测试计划，不自动展开整个开发项目。 |
 
 ## 安装
 
-把下面这句话发给你当前使用的 Agent，让它自行判断客户端、安装并验证：
+### 配置要求
+
+本版支持在 macOS 的 Codex 中使用。项目检查需要 Python，具体项目的工具按需准备，并遵守你的授权。
+
+| 项目 | 要求 |
+|---|---|
+| Agent 客户端 | 支持 Skill 加载和本地命令的 Codex。 |
+| 操作系统 | macOS。本版不支持 Windows 原生执行；Claude Code 尚未做运行验证。 |
+| 核心运行环境 | Python 3.13 或更新版本；本版实际验证版本为 Python 3.13。 |
+| 可选项目工具 | 项目需要的编译器、浏览器、模型或服务。pm skills 本身不依赖特定模型或云服务。 |
+
+### 快速安装
+
+在 Codex 中附上本版 ZIP，然后发送：
 
 ```text
-请为我当前使用的 Agent 客户端安装 https://github.com/chemny/cmm-pm-skills 的完整插件包，不要只安装某一个 `skills/` 子目录。自动判断正确的插件位置，完成安装，并验证 CMM PM Skills: Main 可以读取内置的 `references/CONVENTIONS.md`、`references/commands/market-analysis.md` 和 `references/commands/write-prd.md`，最后报告结果。
+帮我安装附件中的 pm skills 正式版。先检查环境和安装包，只安装这个 Skill，保留现有技能和项目，再确认 Codex 能识别和加载它。下载或改变本次安装以外的内容前先问我。
 ```
+
+仓库已提供本版后，也可发送：
+
+```text
+帮我从 https://github.com/chemny/cmm-pm-skills 安装 pm skills 3.0.1。先核实这个版本已经可取得，不要用旧版替代；检查环境，只安装这个 Skill，再验证识别和加载。
+```
+
+Agent 应报告实际安装版本与加载结果。远程尚无指定版本时，使用附件 ZIP 或如实报告阻塞。详细方法见[安装说明](docs/install.md)。
 
 ## 快速开始
 
-安装后从总入口开始。Codex 选择 Skill，Claude Code 使用命令：
+在 Codex 中选择 **pm skills**，直接说你的目标：
 
 ```text
-Codex：CMM PM Skills: Main
-Claude Code：/cmm-pm-skills
+我想做一个粘贴会议文字、生成纪要和待办的小工具。先缩成最小可用版本，把需求、用户流程和原型给我审，再写应用。
 ```
 
-预期结果：
-
-```text
-它会问你想怎么开始（从头做整套，还是只做某一块，比如只写 PRD），
-按你说的直接动手；每个阶段结尾给风险结论、由你拍板再进下一步。
-不用看说明书。老手也可直接敲单个命令，如 /write-prd 你的想法。
-```
-
-`main` Skill 同时在自身 `references/` 中内置了阶段规则和统一纪律。即使某个宿主只安装 Skills 层、没有按完整插件安装，完整流程也不会悄悄降级成叶子模板。
+先审阅范围和主要使用方式。你授权实现后，Agent 会在该范围内继续整理技术方案、工程任务，完成实际测试和交付。
 
 ## 使用示例
 
-端到端真实案例见 [`_runs/`](./_runs)：
+### 开发一个 Skill
 
 ```text
-_runs/voice-ime/   —— "sayit"（个性化语音输入法）从市场分析到 PRD/原型/技术方案的全过程
+帮我做一个把客服回复草稿整理清楚的 Skill。先把输入、输出、调用样例和验收标准给我审。
 ```
 
+### 修改已有应用
+
 ```text
-_runs/natgeo-video/  —— "英文文章转视频学习工具"的市场分析与需求洞察
+给当前项目加上 CSV 导出。先读现有需求和测试，说明受影响行为，其他部分保持不动。
+```
+
+### 修复 Bug
+
+```text
+生成失败后按钮一直无法再点。按现有需求复现并修好，测试失败后恢复的流程。
+```
+
+### 下次接着做
+
+```text
+按已保存的记录接着推进，告诉我哪些完成了、哪里阻塞、下一步什么能做。已经暂停的部分继续暂停。
+```
+
+### 只做计划
+
+```text
+给这个设计整理测试计划，先不要实现产品，也不要运行模型。
 ```
 
 ## 工作原理
 
-- **总入口 `/cmm-pm-skills`** 一句话分流：整套领航，或单块直奔；
-- **命令 = 阶段动作**，继承上游产出、也能单独调用（§0d）；
-- **统一纪律**写在根 `CONVENTIONS.md`（母版），插件内置同步副本，安装即继承；
-- 每个阶段：先研究/搜证 → 给结论与风险 → 决定权交用户。
+主 Skill 对从目标到交付的整体结果负责。它先区分讨论、规划和执行，再按当前任务加载需要的方法。
 
-## 仓库结构
+| 组成 | 职责 |
+|---|---|
+| `SKILL.md` | 主入口、任务分流和授权边界。 |
+| `references/` | 生命周期与文件契约、软件和 Skill 规则、六项工程核心方法及按需专业方法。 |
+| `scripts/` | 状态和开工检查、真实执行取证、任务完成及有界能力查找。 |
+| `templates/` | 项目资料、状态及有界实验的起始结构。 |
+| `agents/` | Codex 显示名称和默认提示词。 |
+| `tools/` | 明确指定位置的本地安装、更新、备份和卸载。 |
+
+每个项目只维护一份实际状态。方案认可、测试通过和发布许可分别记录。检查器帮助发现证据缺失或不一致，不认证用户身份，也不替代客户端权限。
+
+## 目录结构
 
 ```text
-cmm-pm-skills/
-├── CONVENTIONS.md          统一纪律（母版）
-├── PIPELINE.md             全链路总览
-├── sync_conventions.py     跨平台母版→插件同步
-├── sync_conventions.sh     可选 POSIX 包装脚本
-├── validate_plugins.py     契约校验
-├── cmm-pm-skills/          单插件（Codex + Claude 双清单）
-│   ├── commands/           46 个原生阶段命令
-│   └── skills/             13 个一级 Skills；main 内置阶段命令兜底
-├── _design/                方法论蓝图 / 清单
-└── _runs/                  端到端示例
+SKILL.md
+references/
+scripts/
+templates/
+agents/
+tools/
+docs/
+assets/
+release.json
+release-manifest.json
+LICENSE
 ```
 
-## 运行要求
+详见[使用说明](docs/usage.md)、[安装与恢复](docs/install.md)、[支持环境](docs/support.md)及[版本变化](CHANGELOG.md)。[文件契约](references/artifact-contract.md)定义项目交付资料；[方法索引](references/method-index.md)列出按需方法。
 
-- Claude Code 或 Codex CLI；
-- 部分命令需联网搜索（市场/竞品研究）；
-- 可选：用于发布的 GitHub CLI（`gh`）。
-- 仅维护者需要：Python 3，用于校验、目录生成和约定同步；Windows 可使用 `py -3` 启动器。
+## 许可
 
-## 协议
+[MIT 许可证](LICENSE)，其中明确标注来源的安全审计方法保留 Apache-2.0 来源许可。保留原有版权声明：Pawel Huryn 的原始工作，以及 CMM 的修改和新增内容。详见[第三方说明](THIRD-PARTY-NOTICES.md)与随包提供的 [Apache-2.0 全文](licenses/Apache-2.0.txt)。
 
-MIT。见 [LICENSE](./LICENSE)。本项目改编自 [phuryn/pm-skills](https://github.com/phuryn/pm-skills)（MIT），原作者版权已在 LICENSE 中保留。
+## 关于我
+
+由 CMM 维护。项目仓库：[chemny/cmm-pm-skills](https://github.com/chemny/cmm-pm-skills)。

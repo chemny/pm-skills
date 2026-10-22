@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "project": "PROJECT_ID",
+  "work_item": "WORK_ITEM_ID",
+  "context": {
+    "entry": "new",
+    "interface": "ui",
+    "mode": "planning",
+    "paused": false,
+    "scope": "FIRST_RELEASE_SCOPE",
+    "authority": {
+      "path": "docs/records/baselines/user-request.txt",
+      "sha256": "REPLACE_WITH_ACTUAL_SHA256"
+    }
+  },
+  "inputs": [],
+  "decisions": [],
+  "open_decisions": [],
+  "artifacts": [],
+  "reviews": [],
+  "tasks": []
+}

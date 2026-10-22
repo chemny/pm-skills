@@ -1,4 +1,0 @@
-interface:
-  display_name: "CMM PM Skills: Main"
-  short_description: "CMM PM Skills 总入口，支持完整流程与单项直达"
-  default_prompt: "使用 CMM PM Skills 总入口判断我的目标；如果我只指定一个任务，就只完成该任务。"
